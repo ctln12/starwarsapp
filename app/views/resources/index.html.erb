@@ -1,5 +1,16 @@
-<h1>Resources#index</h1>
+<h1>Star Wars Resources</h1>
 <p>Find me in app/views/resources/index.html.erb</p>
-<% @root_resource.each do |key, value| %>
-  <p> - <%= link_to key, resource_path(key) %>: <%= value %></p>
-<% end %>
+
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Luke Skywalker, Tatooine, ..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+  <div class="input-group-append">
+    <span class="input-group-text" id="basic-addon2">search</span>
+  </div>
+</div>
+
+<div id="search-results" class="mb-3">
+  <h2>Search Results</h2>
+</div>
+
+<div id="resources" class="mb-3"></div>
+<div id="resources-results"></div>
