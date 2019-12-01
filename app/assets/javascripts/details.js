@@ -1,6 +1,10 @@
 const insertDetails = (data) => {
   const title = data.name || data.title;
-  details.insertAdjacentHTML('afterbegin', `<h2>${title.toUpperCase()}</h2>`)
+  const beginning = `
+    <hr class="my-5">
+    <h2 class="text-center mb-5">${title.toUpperCase()}</h2>
+  `;
+  details.insertAdjacentHTML('afterbegin', beginning)
   for (let key in data) {
     let value = data[key];
     if (key !== 'created' && key !== 'edited' && key !== 'url') {
