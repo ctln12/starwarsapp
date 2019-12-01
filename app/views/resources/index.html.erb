@@ -1,5 +1,5 @@
 <h1>Resources#index</h1>
 <p>Find me in app/views/resources/index.html.erb</p>
 <% @root_resource.each do |key, value| %>
-  <p> - <%= key %>: <%= value %></p>
+  <p> - <%= link_to key, resource_path(key) %>: <%= value %></p>
 <% end %>
