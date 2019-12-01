@@ -17,7 +17,7 @@ const addClickEvent = (buttons) => {
 const insertResources = (data) => {
   const names = Object.keys(data);
   names.forEach((name) => {
-    const resource = `<button type="button" class="btn btn-dark mx-2">${name}</button>`;
+    const resource = `<button type="button" class="btn btn-dark">${name}</button>`;
     resources.insertAdjacentHTML('beforeend', resource);
   });
   const buttons = document.querySelectorAll('.btn-dark');
