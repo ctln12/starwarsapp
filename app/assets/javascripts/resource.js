@@ -8,6 +8,14 @@ const insertResource = (data) => {
   if (more != null) {
     results.insertAdjacentHTML('beforeend', '<p id="more" class="btn btn-outline-primary">more...</p>');
   }
+  const resourcesList = document.querySelectorAll('.result');
+
+  resourcesList.forEach((result) =>
+    result.addEventListener('click', (event) => {
+      details.innerHTML = '';
+      fetchDetails(event.target.dataset.url);
+    })
+  );
 };
 
 const fetchResource = (resource) => {
