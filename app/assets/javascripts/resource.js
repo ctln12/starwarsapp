@@ -1,7 +1,7 @@
 const insertResource = (data) => {
   const resourcesResults = data.results;
   resourcesResults.forEach((result) => {
-    const name = `<p class="result">${result.name || result.title}</p>`;
+    const name = `<p class="result" data-url="${result.url}">${result.name || result.title}</p>`;
     results.insertAdjacentHTML('beforeend', name);
   });
   const more = data.next;
@@ -10,8 +10,8 @@ const insertResource = (data) => {
   }
 };
 
-const fetchResource = (name) => {
-  fetch(`https://swapi.co/api/${name}/`)
+const fetchResource = (resource) => {
+  fetch(`https://swapi.co/api/${resource}/`)
     .then(response => response.json())
     .then(insertResource)
 };
