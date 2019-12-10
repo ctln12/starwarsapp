@@ -1,10 +1,31 @@
 // Specific CSS for your home-page
+
+// Navbar & Resources Types
+.bg-black {
+  background-color: black;
+  color: #AAAAAA;
+}
+
+div#resources-types {
+  border-top: 1px solid #4A4A4A;
+}
+
+#resources-types a {
+  color: #AAAAAA;
+  padding: 10px;
+}
+
+#resources-types a.active, #resources-types a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+// Resources Display
 .bg-gray {
   border: 1px solid black;
   border-radius: 3px;
   padding: 10px;
   margin: 10px auto;
-  // background-color: lightgray;
 }
 
 .no-display {
