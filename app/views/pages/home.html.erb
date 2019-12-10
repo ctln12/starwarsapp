@@ -2,18 +2,18 @@
 <p>Find me in app/views/pages/home.html.erb</p>
 
 <!-- Resources Types -->
-<div id="resources-types" class="d-flex justify-content-between">
-  <% @resources_types.each do |resource| %>
-    <%= link_to resource, '#', class: "btn btn-dark #{'active' if resource == 'people'}" %>
-  <% end %>
-</div>
+<!-- <div id="resources-types" class="d-flex justify-content-between">
+  <%# @resources_types.each do |resource| %>
+    <%#= link_to resource, '#', class: "btn btn-dark #{'active' if resource == 'people'}" %>
+  <%# end %>
+</div> -->
 
 <!-- Resources Display -->
-<div id="resources-display">
-  <% @types.each do |key, value| %>
-    <div id="<%= key %>" data-spy="scroll" class="bg-gray <%= 'no-display' if key != 'people'.to_sym %>">
-      <%= render 'display_data', resource_type: value['results'] %>
-      <%= link_to 'more', '#' unless value['next'] == nil %>
+<!-- <div id="resources-display">
+  <%# @types.each do |key, value| %>
+    <div id="<%#= key %>" data-spy="scroll" class="bg-gray <%#= 'no-display' if key != 'people'.to_sym %>">
+      <%#= render 'display_data', resource_type: value['results'] %>
+      <%#= link_to 'more', '#' unless value['next'] == nil %>
     </div>
-  <% end %>
-</div>
+  <%# end %>
+</div> -->
