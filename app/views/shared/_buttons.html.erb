@@ -1,6 +1,6 @@
 <div id="resources-types" class="bg-black">
   <div class="container d-flex justify-content-between">
-    <% CallApiService.new(url: 'https://swapi.co/api/').call.keys.each do |resource| %>
+    <% SwapiService.new(url: 'https://swapi.co/api/').call.keys.each do |resource| %>
       <%= link_to resource, "/#{resource}", class: "#{'active' if current_page?(controller: 'pages', action: resource)}" %>
     <% end %>
   </div>
