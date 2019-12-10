@@ -1,13 +1,13 @@
-.name, .title {
+.name, .title, .more {
   border: 1px solid #4A4A4A;
   border-radius: 3px;
   background-color: #333333;
   padding: 20px;
   height: 100%;
-  max-height: 100px;
+  min-height: 100px;
 }
 
-.name:hover, .title:hover {
+.name:hover, .title:hover, .more:hover {
   border: 1px solid #ffd800;
   color: #ffd800;
   transition: 0.3s;
