@@ -1,4 +1,6 @@
-class CallApiService
+require 'open-uri'
+
+class SwapiService
   def initialize(params)
     @url = params[:url]
   end
