@@ -3,7 +3,8 @@
   border-radius: 3px;
   background-color: #333333;
   padding: 20px;
-  margin-bottom: 10px;
+  height: 100%;
+  max-height: 100px;
 }
 
 .name:hover, .title:hover {
