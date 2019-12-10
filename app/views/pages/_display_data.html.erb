@@ -1,7 +1,7 @@
 <% resource_type.each do |resource| %>
   <% resource.each do |key, value| %>
     <% if key == 'name' || key == 'title' %>
-      <p class="<%= key %>"><%= value %></p>
+      <h5 class="<%= key %>"><%= value %></h5>
       <div id="<%= value.gsub(/\W/,'-') %>" class="details no-display">
     <% else %>
       <p class="<%= key %>"><%= key %>: <%= value %></p>
