@@ -1,0 +1,13 @@
+.name, .title {
+  border: 1px solid #4A4A4A;
+  border-radius: 3px;
+  background-color: #333333;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.name:hover, .title:hover {
+  border: 1px solid #ffd800;
+  color: #ffd800;
+  transition: 0.3s;
+}
