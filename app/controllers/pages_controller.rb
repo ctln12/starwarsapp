@@ -5,36 +5,46 @@ class PagesController < ApplicationController
   def people
     results = FetchDataService.new(type: 'people').call
     @more = results['next']
-    @people = results['results']
+    TransformDataService.new(results: results['results']).call
+    @people = delete(results['results'])
   end
 
   def planets
     results = FetchDataService.new(type: 'planets').call
     @more = results['next']
-    @planets = results['results']
+    @planets = delete(results['results'])
   end
 
   def films
     results = FetchDataService.new(type: 'films').call
     @more = results['next']
-    @films = results['results']
+    @films = delete(results['results'])
   end
 
   def species
     results = FetchDataService.new(type: 'species').call
     @more = results['next']
-    @species = results['results']
+    TransformDataService.new(results: results['results']).call
+    @species = delete(results['results'])
   end
 
   def vehicles
     results = FetchDataService.new(type: 'vehicles').call
     @more = results['next']
-    @vehicles = results['results']
+    @vehicles = delete(results['results'])
   end
 
   def starships
     results = FetchDataService.new(type: 'starships').call
     @more = results['next']
-    @starships = results['results']
+    @starships = delete(results['results'])
+  end
+
+  private
+
+  def delete(data)
+    data.each do |h|
+      h.delete_if { |key, value| key == 'created' || key == 'edited' || key == 'url' || value.class == Array }
+    end
   end
 end
