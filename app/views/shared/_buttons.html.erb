@@ -1,7 +1,7 @@
-<div id="resources-types" class="bg-dark">
-  <div id="menu" class="container d-flex justify-content-between">
+<div id="resources-types" class="bg-black">
+  <div class="container d-flex justify-content-between">
     <% @resources_types.each do |resource| %>
-      <%= link_to resource, '#', class: "btn btn-dark #{'active' if resource == 'people'}" %>
+      <%= link_to resource, '#', class: "#{'active' if resource == 'people'}" %>
     <% end %>
   </div>
 </div>
