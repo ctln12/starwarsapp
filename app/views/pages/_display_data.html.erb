@@ -1,6 +1,6 @@
 <div class="row">
   <% resource_type.each do |resource| %>
-  <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+    <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
       <% resource.each do |key, value| %>
         <% if key == 'name' || key == 'title' %>
           <h5 class="<%= key %>"><%= value %></h5>
@@ -10,6 +10,11 @@
         <% end %>
       <% end %>
       </div>
+    </div>
+  <% end %>
+  <% unless @more.nil? %>
+    <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+      <h5 class="more">more</h5>
     </div>
   <% end %>
 </div>
