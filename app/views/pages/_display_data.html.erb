@@ -1,9 +1,5 @@
 <% resource_type.each do |resource| %>
   <% resource.each do |key, value| %>
-    <% if key == 'name' || key == 'title' %>
-      <p><%= value %></p>
-    <%# else %>
-      <!-- <p><%= key %>: <%= value %></p> -->
-    <% end %>
+    <p><%= key %>: <%= value %></p>
   <% end %>
 <% end %>
