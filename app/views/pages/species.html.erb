@@ -1,1 +1,2 @@
-<p>Find me in app/views/pages/species.html.erb</p>
+<%= render 'display_data', resource_type: @species %>
+<%= 'more' unless @more_species.nil? %>

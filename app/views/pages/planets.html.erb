@@ -1,1 +1,2 @@
-<p>Find me in app/views/pages/planets.html.erb</p>
+<%= render 'display_data', resource_type: @planets %>
+<%= 'more' unless @more_planets.nil? %>
