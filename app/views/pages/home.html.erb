@@ -1,73 +1,19 @@
-<h1>Pages#home</h1>
+<h1>Starwars Fan App</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
-<h2>Resources Types</h2>
-<%# @resources.each do |resource| %>
-  <%#= link_to resource, '#', class: "btn btn-dark" %>
-<%# end %>
+<!-- Resources Types -->
+<div id="resources-types" class="d-flex justify-content-between">
+  <% @resources_types.each do |resource| %>
+    <%= link_to resource, '#', class: "btn btn-dark #{'active' if resource == 'people'}" %>
+  <% end %>
+</div>
 
-<h2>People</h2>
-<%# @people.each do |hero| %>
-  <%# hero.each do |key, value| %>
-    <%# if key == 'name' %>
-      <h4><%#= key %>: <%#= value %></h4>
-    <%# else %>
-      <p><%#= key %>: <%#= value %></p>
-    <%# end %>
-  <%# end %>
-<%# end %>
-
-<h2>Planets</h2>
-<%# @planets.each do |planet| %>
-  <%# planet.each do |key, value| %>
-    <%# if key == 'name' %>
-      <h4><%#= key %>: <%#= value %></h4>
-    <%# else %>
-      <p><%#= key %>: <%#= value %></p>
-    <%# end %>
-  <%# end %>
-<%# end %>
-
-<h2>Films</h2>
-<%# @films.each do |film| %>
-  <%# film.each do |key, value| %>
-    <%# if key == 'title' %>
-      <h4><%#= key %>: <%#= value %></h4>
-    <%# else %>
-      <p><%#= key %>: <%#= value %></p>
-    <%# end %>
-  <%# end %>
-<%# end %>
-
-<h2>Species</h2>
-<%# @species.each do |specie| %>
-  <%# specie.each do |key, value| %>
-    <%# if key == 'name' %>
-      <h4><%#= key %>: <%#= value %></h4>
-    <%# else %>
-      <p><%#= key %>: <%#= value %></p>
-    <%# end %>
-  <%# end %>
-<%# end %>
-
-<h2>Vehicles</h2>
-<%# @vehicles.each do |vehicle| %>
-  <%# vehicle.each do |key, value| %>
-    <%# if key == 'name' %>
-      <h4><%#= key %>: <%#= value %></h4>
-    <%# else %>
-      <p><%#= key %>: <%#= value %></p>
-    <%# end %>
-  <%# end %>
-<%# end %>
-
-<h2>Starships</h2>
-<%# @starships.each do |starship| %>
-  <%# starship.each do |key, value| %>
-    <%# if key == 'name' %>
-      <h4><%#= key %>: <%#= value %></h4>
-    <%# else %>
-      <p><%#= key %>: <%#= value %></p>
-    <%# end %>
-  <%# end %>
-<%# end %>
+<!-- Resources Display -->
+<div id="resources-display">
+  <% @types.each do |key, value| %>
+    <div id="<%= key %>" data-spy="scroll" class="bg-gray <%= 'no-display' if key != 'people'.to_sym %>">
+      <%= render 'display_data', resource_type: value['results'] %>
+      <%= link_to 'more', '#' unless value['next'] == nil %>
+    </div>
+  <% end %>
+</div>
