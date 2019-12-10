@@ -1,11 +1,15 @@
-<% resource_type.each do |resource| %>
-  <% resource.each do |key, value| %>
-    <% if key == 'name' || key == 'title' %>
-      <h5 class="<%= key %>"><%= value %></h5>
-      <div id="<%= value.gsub(/\W/,'-') %>" class="details no-display">
-    <% else %>
-      <p class="<%= key %>"><%= key %>: <%= value %></p>
-    <% end %>
+<div class="row">
+  <% resource_type.each do |resource| %>
+  <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+      <% resource.each do |key, value| %>
+        <% if key == 'name' || key == 'title' %>
+          <h5 class="<%= key %>"><%= value %></h5>
+          <div id="<%= value.gsub(/\W/,'-') %>" class="details no-display">
+        <% else %>
+          <p class="<%= key %>"><%= key %>: <%= value %></p>
+        <% end %>
+      <% end %>
+      </div>
+    </div>
   <% end %>
-  </div>
-<% end %>
+</div>
