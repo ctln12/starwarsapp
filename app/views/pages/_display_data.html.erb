@@ -18,7 +18,7 @@
                 <div class="modal-body">
                   <div id="<%= value.gsub(/\W/,'-') %>" class="details">
         <% else %>
-                    <p class="<%= key %>"><%= key %>: <%= value %></p>
+                    <p class="<%= key %>"><%= key.gsub('_', ' ').capitalize %>: <%= value %></p>
         <% end %>
       <% end %>
 
