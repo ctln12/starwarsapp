@@ -1,7 +1,7 @@
 <div id="resources-types" class="bg-black">
   <div class="container d-flex justify-content-between">
-    <% @resources_types.each do |resource| %>
-      <%= link_to resource, '#', class: "#{'active' if resource == 'people'}" %>
+    <% CallApiService.new(url: 'https://swapi.co/api/').call.keys.each do |resource| %>
+      <%= link_to resource, "/#{resource}" %>
     <% end %>
   </div>
 </div>
