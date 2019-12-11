@@ -1,1 +1,18 @@
 <p>Find me in app/views/pages/home.html.erb</p>
+
+<%= form_tag root_path, method: :get, id: "search-form", class: "row form-inline my-4" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control col",
+    placeholder: "Search...",
+    autocomplete: "off"
+  %>
+  <%= submit_tag "Search", class: "btn btn-dark col-2" %>
+<% end %>
+
+<div id="search-results">
+  <h3>Results</h3>
+  <% @movies.each do |movie| %>
+    <p><%= movie['title'] %></p>
+  <% end %>
+</div>
