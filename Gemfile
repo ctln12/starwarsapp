@@ -15,7 +15,6 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
-gem 'swgem', '~> 1.0'
 gem 'fuzzy_match', '~> 2.1'
 
 group :development do
