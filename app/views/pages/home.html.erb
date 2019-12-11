@@ -12,7 +12,7 @@
 
 <div id="search-results">
   <h3>Results</h3>
-  <% @movies.each do |movie| %>
-    <p><%= movie['title'] %></p>
+  <% @search_results.each do |result| %>
+    <p><%= result['name'] || result['title'] %></p>
   <% end %>
 </div>
