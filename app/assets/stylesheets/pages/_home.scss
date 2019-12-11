@@ -1,4 +1,7 @@
 // Specific CSS for your home-page
+form#search-form {
+  margin: 0;
+}
 
 // Navbar & Resources Types
 .bg-black {
@@ -21,13 +24,6 @@ div#resources-types {
 }
 
 // Resources Display
-.bg-gray {
-  border: 1px solid black;
-  border-radius: 3px;
-  padding: 10px;
-  margin: 10px auto;
-}
-
 .no-display {
   display: none;
 }
