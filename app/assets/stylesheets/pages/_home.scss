@@ -23,6 +23,15 @@ div#resources-types {
   text-decoration: none;
 }
 
+// Filters
+.filter {
+  cursor: pointer;
+}
+
+.active {
+  border-left: 1px solid red;
+}
+
 // Resources Display
 .no-display {
   display: none;
