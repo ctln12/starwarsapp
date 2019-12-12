@@ -13,11 +13,40 @@ const details = document.getElementById('details');
 
 // ROOT PATH
 
+// Search Section
+
+// Div in which are stored all the items
+const searchData = document.getElementById('search-data');
+// Div in which to insert results of search
+const searchResults = document.getElementById('search-results');
+// Button that lauches the query on click
+const searchButton = document.getElementById('search-button');
+// Add click event to search button
+searchButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  const activeFilter = document.querySelector('.filter.active');
+  if (activeFilter !== null) {
+    activeFilter.classList.remove('active');
+  }
+  const allItems = [];
+  const searchItems = document.querySelectorAll('#result-item');
+  searchItems.forEach((item) => {
+    allItems.push(item.innerText);
+  });
+  const searchValue = document.getElementById('search-input').value;
+  const searcher = new FuzzySearch(allItems);
+  const result = searcher.search(searchValue);
+  displayResults(result);
+});
+
+// Resources Section
+
 // Base URL
 const base_url = 'https://swapi.co/api/';
 
 // Filters
 const filters = document.getElementById('filters');
+
 // Request to API for filters and all items
 callApi(base_url, insertFilters);
 
@@ -43,23 +72,4 @@ moreButton.addEventListener('click', (event) => {
     moreButton.setAttribute('data-page', nb+1);
     console.log('clicked more ', type);
   }
-});
-
-// Div in which to insert results of search
-const searchResults = document.getElementById('search-results');
-// Button that lauches the query on click
-const searchButton = document.getElementById('search-button');
-// Add click event to search button
-searchButton.addEventListener('click', (event) => {
-  event.preventDefault();
-  const searchData = [];
-  const searchItems = document.querySelectorAll('#result-item');
-  searchItems.forEach((item) => {
-    searchData.push(item.innerText);
-  });
-  const searchValue = document.getElementById('search-input').value;
-  const searcher = new FuzzySearch(searchData);
-  const result = searcher.search(searchValue);
-  displayResults(result);
-  console.log(result);
 });
