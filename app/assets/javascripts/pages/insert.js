@@ -5,7 +5,7 @@ const insertItemsNames = (data) => {
     const htmlItem = `
       <!-- Button trigger modal -->
       <div class="col-6 col-md-4 col-lg-3 mb-4">
-        <p id="result-item" class="name" data-toggle="modal" data-target="#${dataTarget}">${name}</p>
+        <p class="name" data-toggle="modal" data-target="#${dataTarget}">${name}</p>
       </div>
     `;
     itemsRow.insertAdjacentHTML('beforeEnd', htmlItem);
