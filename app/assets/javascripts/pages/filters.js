@@ -7,12 +7,18 @@ const addClickEvent = (filters) => {
         callApi(`${base_url}${type}/`, insertItemsNames);
         console.log('clicked ', type.toUpperCase());
       } else {
-        callApi(base_url, insertAllItems);
+        fetchAllItemsNames();
         console.log('clicked ALL');
+        moreButton.setAttribute('hidden', '');
       }
-      document.querySelector('.filter.active').classList.remove('active');
-      event.target.classList.add('active');
-      moreButton.setAttribute('hidden', '');
+      const activeFilter = document.querySelector('.filter.active');
+      if (activeFilter === null) {
+        event.target.classList.add('active');
+        moreButton.setAttribute('hidden', '');
+      } else {
+        activeFilter.classList.remove('active');
+        event.target.classList.add('active');
+      }
       moreButton.setAttribute('data-page', '1');
     });
   });
