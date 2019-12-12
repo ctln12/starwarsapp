@@ -1,20 +1,3 @@
-<%#= form_tag root_path, method: :get, id: "search-form", class: "row form-inline my-4" do %>
-  <%#= text_field_tag :query,
-    params[:query],
-    class: "form-control col",
-    placeholder: "Search...",
-    autocomplete: "off"
-  %>
-  <%#= submit_tag "Search", class: "btn btn-dark col-2" %>
-<%# end %>
-<!-- <div id="old-search-results">
-  <%# unless @search_results.nil? %>
-    <%# @search_results.each do |result| %>
-      <p><%#= result['name'] || result['title'] %></p>
-    <%# end %>
-  <%# end %>
-</div> -->
-
 <div id="search-bar" class="container row form-inline my-4" style="margin-right: 0; margin-left: 0; padding-right: 0; padding-left: 0;">
   <input id="search-input" type="text" value="" placeholder="Yoda, Tatooine, ..." autocomplete="off" class="form-control col">
   <button id="search-button" class="btn btn-dark col-2">search</button>
