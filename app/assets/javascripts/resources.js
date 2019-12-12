@@ -1,4 +1,4 @@
-const addClickEvent = (buttons) => {
+const addEvent = (buttons) => {
   buttons.forEach((button) =>
     button.addEventListener('click', (event) => {
       if (event.target.classList.contains('active')) {
@@ -21,7 +21,7 @@ const insertResources = (data) => {
     resources.insertAdjacentHTML('beforeend', resource);
   });
   const buttons = document.querySelectorAll('.btn-dark');
-  addClickEvent(buttons);
+  addEvent(buttons);
 };
 
 const fetchResources = () => {
