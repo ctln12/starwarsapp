@@ -25,7 +25,7 @@ const insertFilters = (data) => {
     const htmlFilter = `<p class="filter" data-url="${data[filter]}">${filter.toUpperCase()}</p>`;
     filters.insertAdjacentHTML('beforeEnd', htmlFilter);
   });
-  callApi(base_url, insertAllItems);
+  fetchAllItemsNames();
   const filtersList = document.querySelectorAll('.filter');
   addClickEvent(filtersList);
 };
