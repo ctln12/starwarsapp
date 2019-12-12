@@ -5,7 +5,7 @@ const insertItemsNames = (data) => {
     const htmlItem = `
       <!-- Button trigger modal -->
       <div class="col-6 col-md-4 col-lg-3 mb-4">
-        <p class="name" data-toggle="modal" data-target="#${dataTarget}">${name}</p>
+        <p id="result-item" class="name" data-toggle="modal" data-target="#${dataTarget}">${name}</p>
       </div>
     `;
     itemsRow.insertAdjacentHTML('beforeEnd', htmlItem);
@@ -17,14 +17,6 @@ const insertItemsNames = (data) => {
   } else {
     moreButton.setAttribute('hidden', '');
   }
-};
-
-const insertAllItems = (data) => {
-  const typesNames = Object.keys(data);
-  typesNames.forEach((name) => {
-    callApi(`${base_url}${name}/`, insertItemsNames);
-  });
-  console.log('got all resources');
 };
 
 const insertMoreItemsNames = (data) => {
