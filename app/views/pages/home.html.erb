@@ -1,17 +1,136 @@
-<%= form_tag root_path, method: :get, id: "search-form", class: "row form-inline my-4" do %>
-  <%= text_field_tag :query,
+<%#= form_tag root_path, method: :get, id: "search-form", class: "row form-inline my-4" do %>
+  <%#= text_field_tag :query,
     params[:query],
     class: "form-control col",
     placeholder: "Search...",
     autocomplete: "off"
   %>
-  <%= submit_tag "Search", class: "btn btn-dark col-2" %>
-<% end %>
+  <%#= submit_tag "Search", class: "btn btn-dark col-2" %>
+<%# end %>
+<!-- <div id="old-search-results">
+  <%# unless @search_results.nil? %>
+    <%# @search_results.each do |result| %>
+      <p><%#= result['name'] || result['title'] %></p>
+    <%# end %>
+  <%# end %>
+</div> -->
 
-<div id="search-results">
-  <% unless @search_results.nil? %>
-    <% @search_results.each do |result| %>
-      <p><%= result['name'] || result['title'] %></p>
-    <% end %>
-  <% end %>
+<div id="search-bar" class="container row form-inline my-4" style="margin-right: 0; margin-left: 0; padding-right: 0; padding-left: 0;">
+  <input id="search-input" type="text" value="" placeholder="Yoda, Tatooine, ..." autocomplete="off" class="form-control col">
+  <button id="search-button" class="btn btn-dark col-2">search</button>
+</div>
+
+<div id="search-results"></div>
+
+<div id="all-resources">
+  <div class="row">
+    <div id="filters" class="col-3 col-md-2"></div>
+    <div id="items" class="col-9 col-md-10">
+      <div id="items-row" class="row"></div>
+      <div id="more-row" class="row">
+        <div id= "more-col" class="col text-center" >
+          <p id="more-button" data-page="1" hidden>more</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modals -->
+<div id="modals">
+  <div class="modal fade" id="Luke-Skywalker" tabindex="-1" role="dialog" aria-labelledby="modalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content bg-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalScrollableTitle">Luke Skywalker</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Content</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="Tatooine" tabindex="-1" role="dialog" aria-labelledby="modalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content bg-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalScrollableTitle">Tatooine</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Content</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="The-Return-of-the-Jedi" tabindex="-1" role="dialog" aria-labelledby="modalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content bg-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalScrollableTitle">The Return of the Jedi</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Content</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="Hutt" tabindex="-1" role="dialog" aria-labelledby="modalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content bg-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalScrollableTitle">Hutt</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Content</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="Snowspeeder" tabindex="-1" role="dialog" aria-labelledby="modalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content bg-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalScrollableTitle">Snowspeeder</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Content</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="Millennium-Falconn" tabindex="-1" role="dialog" aria-labelledby="modalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content bg-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalScrollableTitle">Millennium Falconn</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Content</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
