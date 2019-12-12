@@ -2,19 +2,13 @@ const displayAllItemsNames = (data) => {
   data.results.forEach((result) => {
     const name = Object.keys(result).includes('name') ? result['name'] : result['title'];
     const dataTarget = name.replace(/\W/g,'-');
-    // const htmlItemData = `
-    //   <!-- Button trigger modal -->
-    //   <div class="col-6 col-md-4 col-lg-3 mb-4">
-    //     <p id="result-item" class="name" data-toggle="modal" data-target="#${dataTarget}">${name}</p>
-    //   </div>
-    // `;
-    // searchData.insertAdjacentHTML('beforeEnd', htmlItemData);
     const htmlItemName = `
       <!-- Button trigger modal -->
       <div class="col-6 col-md-4 col-lg-3 mb-4">
         <p class="name" data-toggle="modal" data-target="#${dataTarget}">${name}</p>
       </div>
     `;
+    searchData.insertAdjacentHTML('beforeEnd', htmlItemName);
     itemsRow.insertAdjacentHTML('beforeEnd', htmlItemName);
   });
 };
