@@ -7,8 +7,11 @@
 // Filters
 const filters = document.getElementById('filters');
 
-// Div in which to insert items' names
+// Div in which to insert items names
 const itemsRow = document.getElementById('items-row');
+
+// Div in which to insert items details
+const modalsSection = document.getElementById('modals');
 
 // Global variables
 const NB_PAGES = { 'people': 10, 'planets': 8, 'films': 2, 'species': 5, 'vehicles': 5, 'starships': 5 };
@@ -20,7 +23,7 @@ const base_url = 'https://swapi.co/api/';
 fetchAllDetails(loadSearchData);
 fetchAllDetails(loadDetails);
 fetchAllDetails(displayAllItemsNames);
-callApi(base_url, insertFilters);
+callApi(base_url, displayFilters);
 
 // Search Section
 
