@@ -47,7 +47,7 @@ const base_url = 'https://swapi.co/api/';
 // Filters
 const filters = document.getElementById('filters');
 
-// Request to API for filters and all items
+// Request to API for filters, all items and details
 callApi(base_url, insertFilters);
 
 // Div in which to insert items' names
