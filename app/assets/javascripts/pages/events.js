@@ -2,6 +2,7 @@
 const addSearchEvent = () => {
   searchButton.addEventListener('click', (event) => {
     event.preventDefault();
+    moreButton.innerText = '';
     const activeFilter = document.querySelector('.filter.active');
     if (activeFilter !== null) {
       activeFilter.classList.remove('active');
@@ -15,6 +16,7 @@ const addSearchEvent = () => {
     const searcher = new FuzzySearch(allItems);
     const result = searcher.search(searchValue);
     displayResults(result);
+    console.log('results', result);
   });
 }
 // Add click event to more button
