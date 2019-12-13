@@ -25,7 +25,6 @@ const addClickEvent = (filters) => {
 // Add click event to search button
 const addSearchEvent = () => {
   searchButton.addEventListener('click', (event) => {
-    event.preventDefault();
     const activeFilter = document.querySelector('.filter.active');
     if (activeFilter !== null) {
       activeFilter.classList.remove('active');
@@ -36,6 +35,7 @@ const addSearchEvent = () => {
       allItems.push(item.innerText);
     });
     const searchValue = document.getElementById('search-input').value;
+    document.getElementById('search-input').value = "";
     const searcher = new FuzzySearch(allItems);
     const result = searcher.search(searchValue);
     displayResults(result);
