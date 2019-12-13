@@ -1,3 +1,30 @@
+// Add click event to filter buttons
+const addClickEvent = (filters) => {
+  filters.forEach((filter) => {
+    filter.addEventListener('click', (event) => {
+      itemsRow.innerText = '';
+      const type = event.target.innerText.toLowerCase();
+      if (type !== 'all') {
+        callApi(`${base_url}${type}/`, insertItemsNames);
+        console.log('clicked ', type.toUpperCase());
+      } else {
+        fetchAllItemsNames(displayAllItemsNames);
+        console.log('clicked ALL');
+        moreButton.setAttribute('hidden', '');
+      }
+      const activeFilter = document.querySelector('.filter.active');
+      if (activeFilter === null) {
+        event.target.classList.add('active');
+        moreButton.setAttribute('hidden', '');
+      } else {
+        activeFilter.classList.remove('active');
+        event.target.classList.add('active');
+      }
+      moreButton.setAttribute('data-page', '1');
+    });
+  });
+};
+
 // Add click event to search button
 const addSearchEvent = () => {
   searchButton.addEventListener('click', (event) => {
