@@ -26,7 +26,7 @@ The user clicks on a resource item and gets a detail view over it.
 
 Clone the app: `git clone git@github.com:ctln12/starwarsapp.git <your_folder>`
 
-Go in `<your_folder>`: `cd <your_folder>`
+Go into that folder: `cd <your_folder>`
 
 Start a server: `rails s`
 
