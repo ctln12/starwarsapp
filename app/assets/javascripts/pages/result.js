@@ -10,5 +10,4 @@ const displayResults = (result) => {
     `;
     itemsRow.insertAdjacentHTML('beforeEnd', htmlItem);
   });
-  console.log(result);
 };
