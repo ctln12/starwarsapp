@@ -32,6 +32,7 @@ const insertFilters = (data) => {
     filters.insertAdjacentHTML('beforeEnd', htmlFilter);
   });
   fetchAllItemsNames(displayAllItemsNames);
+  fetchAllItemsNames(loadDetails);
   const filtersList = document.querySelectorAll('.filter');
   addClickEvent(filtersList);
 };
