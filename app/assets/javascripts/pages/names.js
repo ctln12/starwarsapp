@@ -13,27 +13,26 @@ const displayAllItemsNames = (data) => {
   });
 };
 
-const fetchAllItemsNames = () => {
+const fetchAllItemsNames = (displayFn) => {
   for (var i = 1; i < 10; i++) {
     if (i < 2) {
-      callApi(`${base_url}people/?page=${i}`, displayAllItemsNames);
-      callApi(`${base_url}films/?page=${i}`, displayAllItemsNames);
-      callApi(`${base_url}planets/?page=${i}`, displayAllItemsNames);
-      callApi(`${base_url}species/?page=${i}`, displayAllItemsNames);
-      callApi(`${base_url}vehicles/?page=${i}`, displayAllItemsNames);
-      callApi(`${base_url}starships/?page=${i}`, displayAllItemsNames);
+      callApi(`${base_url}people/?page=${i}`, displayFn);
+      callApi(`${base_url}films/?page=${i}`, displayFn);
+      callApi(`${base_url}planets/?page=${i}`, displayFn);
+      callApi(`${base_url}species/?page=${i}`, displayFn);
+      callApi(`${base_url}vehicles/?page=${i}`, displayFn);
+      callApi(`${base_url}starships/?page=${i}`, displayFn);
     } else if (i >=2 && i < 5) {
-      callApi(`${base_url}people/?page=${i}`, displayAllItemsNames);
-      callApi(`${base_url}planets/?page=${i}`, displayAllItemsNames);
-      callApi(`${base_url}species/?page=${i}`, displayAllItemsNames);
-      callApi(`${base_url}vehicles/?page=${i}`, displayAllItemsNames);
-      callApi(`${base_url}starships/?page=${i}`, displayAllItemsNames);
+      callApi(`${base_url}people/?page=${i}`, displayFn);
+      callApi(`${base_url}planets/?page=${i}`, displayFn);
+      callApi(`${base_url}species/?page=${i}`, displayFn);
+      callApi(`${base_url}vehicles/?page=${i}`, displayFn);
+      callApi(`${base_url}starships/?page=${i}`, displayFn);
     } else if (i >=5 && i < 8) {
-      callApi(`${base_url}people/?page=${i}`, displayAllItemsNames);
-      callApi(`${base_url}planets/?page=${i}`, displayAllItemsNames);
+      callApi(`${base_url}people/?page=${i}`, displayFn);
+      callApi(`${base_url}planets/?page=${i}`, displayFn);
     } else if (i >= 8) {
-      callApi(`${base_url}people/?page=${i}`, displayAllItemsNames);
+      callApi(`${base_url}people/?page=${i}`, displayFn);
     }
   }
 }
-
