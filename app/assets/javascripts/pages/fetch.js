@@ -1,15 +1,7 @@
-const displayAllItemsNames = (data) => {
-  data.results.forEach((result) => {
-    const name = Object.keys(result).includes('name') ? result['name'] : result['title'];
-    const dataTarget = name.replace(/\W/g,'-');
-    const htmlItemName = `
-      <!-- Button trigger modal -->
-      <div class="col-6 col-md-4 col-lg-3 mb-4">
-        <p class="name" data-toggle="modal" data-target="#${dataTarget}">${name}</p>
-      </div>
-    `;
-    itemsRow.insertAdjacentHTML('beforeEnd', htmlItemName);
-  });
+const callApi = (url, insertFn) => {
+  fetch(url)
+    .then(response => response.json())
+    .then(insertFn)
 };
 
 const fetchResource = (resourceType, nbPages, actionFn) => {
