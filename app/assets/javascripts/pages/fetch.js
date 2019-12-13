@@ -13,26 +13,17 @@ const displayAllItemsNames = (data) => {
   });
 };
 
-const fetchAllItems = (resourceType, nbPages, displayFn) => {
+const fetchResource = (resourceType, nbPages, actionFn) => {
   for (var i = 1; i < nbPages; i++) {
-    callApi(`${base_url}${resourceType}/?page=${i}`, displayFn);
+    callApi(`${base_url}${resourceType}/?page=${i}`, actionFn);
   }
 };
 
-const fetchAllItemsNames = (displayFn) => {
-  fetchAllItems('people', 10, displayFn);
-  fetchAllItems('planets', 8, displayFn);
-  fetchAllItems('films', 2, displayFn);
-  fetchAllItems('species', 5, displayFn);
-  fetchAllItems('vehicles', 5, displayFn);
-  fetchAllItems('starships', 5, displayFn);
-}
-
-const fetchAllDetails = (loadFn) => {
-  fetchAllItems('people', 10, loadFn);
-  fetchAllItems('planets', 8, loadFn);
-  fetchAllItems('films', 2, loadFn);
-  fetchAllItems('species', 5, loadFn);
-  fetchAllItems('vehicles', 5, loadFn);
-  fetchAllItems('starships', 5, loadFn);
+const fetchAllDetails = (actionFn) => {
+  fetchResource('people', 10, actionFn);
+  fetchResource('planets', 8, actionFn);
+  fetchResource('films', 2, actionFn);
+  fetchResource('species', 5, actionFn);
+  fetchResource('vehicles', 5, actionFn);
+  fetchResource('starships', 5, actionFn);
 };

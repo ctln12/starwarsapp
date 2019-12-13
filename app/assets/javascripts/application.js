@@ -35,6 +35,6 @@ const base_url = 'https://swapi.co/api/';
 
 // Request to API for filters, all items names and their details
 callApi(base_url, insertFilters);
-fetchAllItemsNames(displayAllItemsNames);
+fetchAllDetails(displayAllItemsNames);
 fetchAllDetails(loadDetails);
 fetchAllDetails(loadSearchData);

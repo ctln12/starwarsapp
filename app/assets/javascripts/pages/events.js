@@ -5,10 +5,10 @@ const addClickEvent = (filters) => {
       itemsRow.innerText = '';
       const type = event.target.innerText.toLowerCase();
       if (type !== 'all') {
-        fetchAllItems(type, NB_PAGES[type], displayAllItemsNames);
+        fetchResource(type, NB_PAGES[type], displayAllItemsNames);
         console.log('clicked ', type.toUpperCase());
       } else {
-        fetchAllItemsNames(displayAllItemsNames);
+        fetchAllDetails(displayAllItemsNames);
         console.log('clicked ALL');
         moreButton.setAttribute('hidden', '');
       }
