@@ -42,3 +42,14 @@ const loadDetails = (data) => {
     console.log('added modal');
   });
 };
+
+const loadSearchData = (data) => {
+  data.results.forEach((result) => {
+    const name = Object.keys(result).includes('name') ? result['name'] : result['title'];
+    const htmlItemName = `
+        <p id="result-item">${name}</p>
+    `;
+    searchData.insertAdjacentHTML('beforeEnd', htmlItemName);
+  });
+  console.log('search data added')
+};
