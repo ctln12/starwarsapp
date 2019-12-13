@@ -5,7 +5,7 @@ const addClickEvent = (filters) => {
       itemsRow.innerText = '';
       const type = event.target.innerText.toLowerCase();
       if (type !== 'all') {
-        callApi(`${base_url}${type}/`, insertItemsNames);
+        fetchAllItems(type, NB_PAGES[type], displayAllItemsNames);
         console.log('clicked ', type.toUpperCase());
       } else {
         fetchAllItemsNames(displayAllItemsNames);
