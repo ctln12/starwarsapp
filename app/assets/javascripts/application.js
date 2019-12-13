@@ -13,18 +13,9 @@ const searchButton = document.getElementById('search-button');
 addSearchEvent();
 
 // Resources Section
-const NB_PAGES = { 'people': 10, 'planets': 8, 'films': 2, 'species': 5, 'vehicles': 5, 'starships': 5 };
-
-// Base URL
-const base_url = 'https://swapi.co/api/';
 
 // Filters
 const filters = document.getElementById('filters');
-
-// Request to API for filters, all items names and their details
-callApi(base_url, insertFilters);
-fetchAllItemsNames(displayAllItemsNames);
-fetchAllDetails(loadDetails);
 
 // Div in which to insert items' names
 const itemsRow = document.getElementById('items-row');
@@ -36,3 +27,14 @@ const moreCol = document.getElementById('more-col');
 const moreButton = document.querySelector('#more-button');
 addMoreEvent();
 
+// Global variables
+const NB_PAGES = { 'people': 10, 'planets': 8, 'films': 2, 'species': 5, 'vehicles': 5, 'starships': 5 };
+
+// Base URL
+const base_url = 'https://swapi.co/api/';
+
+// Request to API for filters, all items names and their details
+callApi(base_url, insertFilters);
+fetchAllItemsNames(displayAllItemsNames);
+fetchAllDetails(loadDetails);
+fetchAllDetails(loadSearchData);
