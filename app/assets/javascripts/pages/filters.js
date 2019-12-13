@@ -7,7 +7,7 @@ const addClickEvent = (filters) => {
         callApi(`${base_url}${type}/`, insertItemsNames);
         console.log('clicked ', type.toUpperCase());
       } else {
-        fetchAllItemsNames();
+        fetchAllItemsNames(displayAllItemsNames);
         console.log('clicked ALL');
         moreButton.setAttribute('hidden', '');
       }
@@ -31,7 +31,7 @@ const insertFilters = (data) => {
     const htmlFilter = `<p class="filter" data-url="${data[filter]}">${filter.toUpperCase()}</p>`;
     filters.insertAdjacentHTML('beforeEnd', htmlFilter);
   });
-  fetchAllItemsNames();
+  fetchAllItemsNames(displayAllItemsNames);
   const filtersList = document.querySelectorAll('.filter');
   addClickEvent(filtersList);
 };
