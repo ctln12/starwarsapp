@@ -8,10 +8,11 @@
 }
 
 .name:hover {
-  border: 1px solid #ffd800;
-  color: #ffd800;
+  border: 1px solid white;
+  color: white;
   transition: 0.3s;
   cursor: pointer;
+  box-shadow: 0px 0px 3px white;
 }
 
 .card-people {
