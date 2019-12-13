@@ -8,7 +8,6 @@ const displayAllItemsNames = (data) => {
         <p class="name" data-toggle="modal" data-target="#${dataTarget}">${name}</p>
       </div>
     `;
-    searchData.insertAdjacentHTML('beforeEnd', htmlItemName);
     itemsRow.insertAdjacentHTML('beforeEnd', htmlItemName);
   });
 };
