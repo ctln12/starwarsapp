@@ -2,15 +2,6 @@
 //= require rails-ujs
 //= require_tree .
 
-// Resources path
-const resources = document.getElementById('resources');
-
-const results = document.getElementById('results');
-
-const details = document.getElementById('details');
-
-// fetchResources();
-
 // ROOT PATH
 
 // Search Section
@@ -40,6 +31,7 @@ searchButton.addEventListener('click', (event) => {
 });
 
 // Resources Section
+const NB_PAGES = { 'people': 10, 'planets': 8, 'films': 2, 'species': 5, 'vehicles': 5, 'starships': 5 };
 
 // Base URL
 const base_url = 'https://swapi.co/api/';
@@ -47,8 +39,10 @@ const base_url = 'https://swapi.co/api/';
 // Filters
 const filters = document.getElementById('filters');
 
-// Request to API for filters, all items and details
+// Request to API for filters, all items names and their details
 callApi(base_url, insertFilters);
+fetchAllItemsNames(displayAllItemsNames);
+fetchAllDetails(loadDetails);
 
 // Div in which to insert items' names
 const itemsRow = document.getElementById('items-row');
