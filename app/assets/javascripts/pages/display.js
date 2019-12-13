@@ -1,5 +1,5 @@
 const displayFilters = (data) => {
-  filters.insertAdjacentHTML('afterBegin', '<p class="filter active">ALL</p>');
+  filters.insertAdjacentHTML('afterBegin', '<p class="filter all active">ALL</p>');
   const filtersArray = Object.keys(data);
   filtersArray.forEach((filter) => {
     const htmlFilter = `<p class="filter" data-url="${data[filter]}">${filter.toUpperCase()}</p>`;

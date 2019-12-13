@@ -11,11 +11,15 @@ const addClickEvent = (filters) => {
         fetchAllDetails(displayAllItemsNames);
         console.log('clicked ALL');
       }
-      const activeFilter = document.querySelector('.filter.active');
+      const activeFilter = document.querySelector(`.active`);
+      console.log(type);
       if (activeFilter === null) {
+        event.target.classList.add(`${type}`);
         event.target.classList.add('active');
       } else {
-        activeFilter.classList.remove('active');
+        // activeFilter.classList.remove('active');
+        document.querySelector(`.active`).classList.value = activeFilter.classList.value.match(/filter/);
+        event.target.classList.add(`${type}`);
         event.target.classList.add('active');
       }
     });
@@ -25,9 +29,10 @@ const addClickEvent = (filters) => {
 // Add click event to search button
 const addSearchEvent = () => {
   searchButton.addEventListener('click', (event) => {
-    const activeFilter = document.querySelector('.filter.active');
+    const activeFilter = document.querySelector('.active');
     if (activeFilter !== null) {
-      activeFilter.classList.remove('active');
+      // activeFilter.classList.remove('active');
+      document.querySelector(`.active`).classList.value = activeFilter.classList.value.match(/filter/);
     }
     const allItems = [];
     const searchItems = document.querySelectorAll('#result-item');

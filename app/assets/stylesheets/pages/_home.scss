@@ -8,8 +8,37 @@
 // Filters
 .filter {
   cursor: pointer;
+  padding-left: 10px;
 }
 
 .active {
-  border-left: 1px solid red;
+  border-left: 5px solid red;
+}
+
+.all {
+  border-left: 5px solid white;
+}
+
+.people {
+  border-left: 5px solid red;
+}
+
+.planets {
+  border-left: 5px solid green;
+}
+
+.films {
+  border-left: 5px solid blue;
+}
+
+.species {
+  border-left: 5px solid orange;
+}
+
+.vehicles {
+  border-left: 5px solid purple;
+}
+
+.starships {
+  border-left: 5px solid yellow;
 }
