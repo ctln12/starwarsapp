@@ -2,16 +2,6 @@
 //= require rails-ujs
 //= require_tree .
 
-// Search Section
-
-// Div in which are stored all the items
-const searchData = document.getElementById('search-data');
-// Div in which to insert results of search
-const searchResults = document.getElementById('search-results');
-// Button that lauches the query on click
-const searchButton = document.getElementById('search-button');
-addSearchEvent();
-
 // Resources Section
 
 // Filters
@@ -27,7 +17,17 @@ const NB_PAGES = { 'people': 10, 'planets': 8, 'films': 2, 'species': 5, 'vehicl
 const base_url = 'https://swapi.co/api/';
 
 // Request to API for filters, all items names and their details
-callApi(base_url, insertFilters);
-fetchAllDetails(displayAllItemsNames);
-fetchAllDetails(loadDetails);
 fetchAllDetails(loadSearchData);
+fetchAllDetails(loadDetails);
+fetchAllDetails(displayAllItemsNames);
+callApi(base_url, insertFilters);
+
+// Search Section
+
+// Div in which are stored all the items
+const searchData = document.getElementById('search-data');
+// Div in which to insert results of search
+const searchResults = document.getElementById('search-results');
+// Button that lauches the query on click
+const searchButton = document.getElementById('search-button');
+addSearchEvent();
