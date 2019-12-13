@@ -1,26 +1,8 @@
 // Specific CSS for your home-page
-form#search-form {
-  margin: 0;
-}
 
 // Navbar & Resources Types
 .bg-black {
   background-color: black;
-}
-
-div#resources-types {
-  border-top: 1px solid #4A4A4A;
-}
-
-#resources-types a {
-  color: #AAAAAA;
-  font-size: 1rem;
-  padding: 0.5rem;
-}
-
-#resources-types a.active, #resources-types a:hover {
-  color: white;
-  text-decoration: none;
 }
 
 // Filters
@@ -30,9 +12,4 @@ div#resources-types {
 
 .active {
   border-left: 1px solid red;
-}
-
-// Resources Display
-.no-display {
-  display: none;
 }
